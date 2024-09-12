@@ -1,0 +1,33 @@
+---
+import BaseHead from './BaseHead.astro';
+import Footer from './Footer.astro';
+import Navbar from './Navbar.astro';
+const { title, description } = Astro.props;
+
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <BaseHead title={title} description={description}/>
+  </head>
+  <script is:inline>
+    console.log('page loaded', localStorage.getItem('theme'));
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <body class="dark:text-white dark:bg-black w-11/12  md:w-2/3 lg:w-1/2 mx-auto">
+    <Navbar/>
+    <main>
+    <slot />
+    </main>
+    <Footer />
+  </body>
+  <style>
+    h1 {
+      font-size: 2rem;
+    }
+  </style>
+</html>
+

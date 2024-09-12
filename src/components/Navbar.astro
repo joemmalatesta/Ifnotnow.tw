@@ -5,7 +5,18 @@ import { SITE_TITLE } from '../consts';
 	<nav class="w-full flex justify-between items-center py-4 mb-2 border-b">
 		<h2><a href="/" class="text-lg">INNTW</a></h2>
 		<div class="flex gap-3">
+			<button id="theme-toggle" class="hover:underline underline-offset-2 transition-all duration-300">Toggle Theme</button>
 			<a href="/mantra" class="hover:underline underline-offset-2 transition-all duration-300">Mantra</a>
 			<!-- <a href="/blog" class="hover:underline underline-offset-2 transition-all duration-300">Blog</a> -->
 		</div>
 	</nav>
+
+
+	<script is:inline>
+		document.getElementById('theme-toggle').addEventListener('click', () => {
+			const currentTheme = localStorage.getItem('theme');
+			const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+			localStorage.setItem('theme', newTheme);
+			document.documentElement.classList.toggle('dark', newTheme === 'dark');
+		});
+	</script>
