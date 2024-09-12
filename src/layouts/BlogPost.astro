@@ -11,7 +11,7 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 		<main>
 			<article class="prose dark:prose-invert">
 					<div class="title">
-						<div class="date">
+						<div class="date opacity-70">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
@@ -22,7 +22,6 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
-						<hr />
 					</div>
 					<slot />
 				</div>
