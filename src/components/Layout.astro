@@ -17,17 +17,13 @@ const { title, description } = Astro.props;
       document.documentElement.classList.add('dark');
     }
   </script>
-  <body class="dark:text-white dark:bg-black w-11/12  md:w-2/3 lg:w-1/2 mx-auto">
+  <body class="dark:text-white dark:bg-black w-11/12 md:w-2/3 lg:w-1/2 mx-auto min-h-screen flex flex-col">
     <Navbar/>
-    <main>
-    <slot />
+    <main class="flex-grow">
+      <slot />
     </main>
-    <Footer />
+    <div class="flex justify-center">
+      <Footer />
+    </div>
   </body>
-  <style>
-    h1 {
-      font-size: 2rem;
-    }
-  </style>
 </html>
-
