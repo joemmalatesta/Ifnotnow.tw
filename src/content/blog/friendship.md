@@ -1,5 +1,5 @@
 ---
 title: 'On friendship'
-description: 'Lorem ipsum dolor sit amet'
+description: 'Making friends is easy and rewarding.'
 pubDate: 'Sept 10 2024'
 ---
