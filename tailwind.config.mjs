@@ -1,14 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
 			colors: {
-				dark: '#1a1a1a',
-				light: '#f2f2f2'
-			  },
+				dark: "#1a1a1a",
+				light: "#f2f2f2",
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						"blockquote p:first-of-type::before": { content: "none" },
+						"blockquote p:first-of-type::after": { content: "none" },
+						blockquote: {
+							fontWeight: "400",
+						},
+						a: {
+							textDecoration: "underline",
+							textUnderlineOffset: "2px",
+							transition: "text-underline-offset 0.2s ease-in-out",
+							"&:hover": {
+								textUnderlineOffset: "4px",
+							},
+						},
+						h4: {
+							textDecoration: "none",
+						},
+					},
+				},
+			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
-	darkMode: 'class',
-}
+	plugins: [require("@tailwindcss/typography")],
+	darkMode: "class",
+};

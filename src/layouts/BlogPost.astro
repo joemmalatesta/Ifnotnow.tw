@@ -7,23 +7,25 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate } = Astro.props;
 
 ---
-	<Layout>
-		<main>
-			<article class="prose dark:prose-invert xl:prose-lg mx-auto max-w-4xl">
-					<div class="title">
-						<div class="date opacity-70">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
+<Layout>
+	<main>
+		<article class="prose dark:prose-invert prose-sm md:prose-base 2xl:prose-lg">
+				<div class="title">
+					<div class="date opacity-70">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
 					</div>
-					<slot />
+					<h1>{title}</h1>
 				</div>
-			</article>
-	</Layout>
+				<slot />
+			</div>
+		</article>
+</Layout>
+	
+	
