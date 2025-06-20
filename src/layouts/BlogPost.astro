@@ -7,7 +7,10 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate } = Astro.props;
 
 ---
-<Layout>
+
+
+
+<Layout title={title} description={description}>
 	<main>
 		<article class="prose dark:prose-invert prose-sm md:prose-base 2xl:prose-lg">
 				<div class="title">

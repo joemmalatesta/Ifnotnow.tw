@@ -9,7 +9,7 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <BaseHead title={title} description={description}/>
+    <BaseHead title={title ?? 'If not now then when?'} description={description ?? 'If not now then when?'}/>
   </head>
   <script is:inline>
     console.log('page loaded', localStorage.getItem('theme'));
@@ -17,7 +17,7 @@ const { title, description } = Astro.props;
       document.documentElement.classList.add('dark');
     }
   </script>
-  <body class="dark:text-light dark:bg-dark bg-light text-dark w-11/12 md:w-2/3 lg:w-1/2 mx-auto min-h-screen flex flex-col">
+  <body class="dark:text-light dark:bg-dark bg-light text-dark w-11/12 lg:w-3/5 xl:w-1/2 mx-auto 2xl:w-2/5 selection:bg-light selection:text-dark min-h-screen flex flex-col">
     <Navbar/>
     <main class="flex-grow">
       <slot />
