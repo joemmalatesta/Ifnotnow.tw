@@ -17,7 +17,7 @@ const { title, description } = Astro.props;
       document.documentElement.classList.add('dark');
     }
   </script>
-  <body class="dark:text-light dark:bg-dark bg-light text-dark w-11/12 lg:w-3/5 xl:w-1/2 mx-auto 2xl:w-2/5 selection:bg-light selection:text-dark min-h-screen flex flex-col">
+  <body class="dark:text-light dark:bg-dark bg-light text-dark w-11/12 lg:w-3/5 xl:w-1/2 mx-auto 2xl:w-2/5 dark:selection:bg-light dark:selection:text-dark selection:text-light selection:bg-dark min-h-screen flex flex-col">
     <Navbar/>
     <main class="flex-grow">
       <slot />
